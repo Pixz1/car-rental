@@ -20,6 +20,12 @@
     @apply sm:px-16 px-6;
 }
 
+@media (min-width: 1280px) {
+    .pt-80-desktop {
+        padding-top: 20rem;
+    }
+}
+
 .padding-y {
     @apply py-4;
 }
