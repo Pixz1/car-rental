@@ -16,6 +16,9 @@ const Navbar = () => {
                         height={18}
                         className="object-contain"
                     />
+                    <span className="font-extrabold text-xl pl-5">
+                        Getaway Rentals
+                    </span>
                 </Link>
                 <CustomButton
                     title="Sign In"
