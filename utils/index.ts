@@ -1,13 +1,15 @@
-import { CarProps } from "@/types";
+import { CarProps, FilterProps } from "@/types";
 
-export async function fetchCars(): Promise<CarProps[]> {
+export async function fetchCars(filters: FilterProps): Promise<CarProps[]> {
+    const { make, year, model, limit, fuel } = filters;
+
     const headers = {
         "X-RapidAPI-Key": "b6800ba4b6mshd19cbe854cdbb79p1a6c8ajsna8c5cc28367a",
         "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
     };
 
     const response = await fetch(
-        "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=911",
+        `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${make}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
         { headers: headers }
     );
 
@@ -54,4 +56,16 @@ export const generateCarImageUrl = (car: CarProps, angle?: string) => {
     url.searchParams.append("angle", `${angle}`);
 
     return `${url}`;
+};
+
+export const updateSearchParams = (type: string, value: string) => {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    searchParams.set(type, value);
+
+    const newPathname = `${
+        window.location.pathname
+    }?${searchParams.toString()}`;
+
+    return newPathname;
 };
