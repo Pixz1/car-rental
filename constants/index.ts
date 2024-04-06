@@ -56,28 +56,24 @@ export const footerLinks = [
     {
         title: "About",
         links: [
-            { title: "How it works", url: "/" },
-            { title: "Featured", url: "/" },
-            { title: "Partnership", url: "/" },
-            { title: "Bussiness Relation", url: "/" },
+            { title: "* Some Link", url: "/" },
+            { title: "* Some Link", url: "/" },
         ],
     },
     {
         title: "Company",
         links: [
-            { title: "Events", url: "/" },
-            { title: "Blog", url: "/" },
-            { title: "Podcast", url: "/" },
-            { title: "Invite a friend", url: "/" },
+            { title: "* Some Link", url: "/" },
+            { title: "* Some Link", url: "/" },
         ],
     },
     {
         title: "Socials",
         links: [
-            { title: "Discord", url: "/" },
-            { title: "Instagram", url: "/" },
-            { title: "Twitter", url: "/" },
-            { title: "Facebook", url: "/" },
+            { title: "Discord", url: "https://discord.com" },
+            { title: "Instagram", url: "https://www.instagram.com" },
+            { title: "Twitter", url: "https://twitter.com" },
+            { title: "Facebook", url: "https://www.facebook.com" },
         ],
     },
 ];

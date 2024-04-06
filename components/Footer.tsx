@@ -27,6 +27,8 @@ const Footer = () => {
                                 <Link
                                     key={item.title}
                                     href={item.url}
+                                    rel="noopener noreferrer"
+                                    target="_blank"
                                     className="text-gray-500"
                                 >
                                     {item.title}
