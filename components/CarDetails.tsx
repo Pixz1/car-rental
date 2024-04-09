@@ -6,6 +6,7 @@ import { Dialog, Transition } from "@headlessui/react";
 
 import { CarProps } from "@/types";
 import { generateCarImageUrl } from "@/utils";
+import CustomButton from "./CustomButton";
 
 interface CarDetailsProps {
     isOpen: boolean;
@@ -14,6 +15,14 @@ interface CarDetailsProps {
 }
 
 const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
+    const selectedKeys = [
+        "city_L100km",
+        "combination_L100km",
+        "fuel_type",
+        "transmission",
+        "year",
+    ];
+
     return (
         <>
             <Transition appear show={isOpen} as={Fragment}>
@@ -123,8 +132,11 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                         </h2>
 
                                         <div className="mt-3 flex flex-wrap gap-4">
-                                            {Object.entries(car).map(
-                                                ([key, value]) => (
+                                            {Object.entries(car)
+                                                .filter(([key, value]) =>
+                                                    selectedKeys.includes(key)
+                                                )
+                                                .map(([key, value]) => (
                                                     <div
                                                         className="flex justify-between gap-5 w-full text-right"
                                                         key={key}
@@ -138,9 +150,23 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                                             {value}
                                                         </p>
                                                     </div>
-                                                )
-                                            )}
+                                                ))}
                                         </div>
+                                    </div>
+
+                                    <div className="flex gap-4">
+                                        <CustomButton
+                                            title="Book"
+                                            containerStyles="w-1/2 py-[16px] rounded-full bg-primary-blue"
+                                            textStyles="text-white text-[14px] leading-[17px] font-bold"
+                                            rightIcon="/right-arrow.svg"
+                                        />
+                                        <CustomButton
+                                            title="Full Details"
+                                            containerStyles="w-1/2 py-[16px] rounded-full bg-primary-blue"
+                                            textStyles="text-white text-[14px] leading-[17px] font-bold"
+                                            rightIcon="/right-arrow.svg"
+                                        />
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>

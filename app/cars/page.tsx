@@ -1,6 +1,6 @@
 import { CustomFilter, SearchBar, CarCard, ShowMore } from "@/components";
 import { fuels, yearsOfProduction } from "@/constants";
-import { AllCarsProps, CarProps } from "@/types";
+import { AllCarsProps } from "@/types";
 import { fetchCars } from "@/utils";
 
 export default async function Cars({ searchParams }: AllCarsProps) {
@@ -17,7 +17,7 @@ export default async function Cars({ searchParams }: AllCarsProps) {
 
     return (
         <div className="overflow-hidden">
-            <div className="mt-36 padding-x padding-y max-width" id="discover">
+            <div className="mt-36 padding-x padding-y max-width">
                 <div className="home__text-container">
                     <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
                     <p>Explore the cars you might like</p>
