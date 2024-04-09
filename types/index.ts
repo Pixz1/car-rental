@@ -1,6 +1,6 @@
 import { MouseEventHandler } from "react";
 
-export interface HomeProps {
+export interface AllCarsProps {
     searchParams: FilterProps;
 }
 

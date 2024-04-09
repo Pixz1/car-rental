@@ -180,7 +180,7 @@
 }
 
 .footer__link {
-    @apply flex flex-col gap-6 text-base min-w-[170px];
+    @apply flex flex-col items-center gap-6 text-base min-w-[170px];
 }
 
 .footer__copyrights {
