@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
@@ -164,14 +165,21 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                             title="Book"
                                             containerStyles="w-1/2 py-[16px] rounded-full bg-primary-blue"
                                             textStyles="text-white text-[14px] leading-[17px] font-bold"
-                                            rightIcon="/right-arrow.svg"
+                                            rightIcon="/add.svg"
                                         />
-                                        <CustomButton
-                                            title="Full Details"
-                                            containerStyles="w-1/2 py-[16px] rounded-full bg-primary-blue"
-                                            textStyles="text-white text-[14px] leading-[17px] font-bold"
-                                            rightIcon="/right-arrow.svg"
-                                        />
+                                        <Link
+                                            className="w-full"
+                                            href={{
+                                                pathname: `/cars/details/${car.make}-${car.model}-${car.year}-${car.transmission}-${car.combination_mpg}`,
+                                            }}
+                                        >
+                                            <CustomButton
+                                                title="Full Details"
+                                                containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
+                                                textStyles="text-white text-[14px] leading-[17px] font-bold"
+                                                rightIcon="/right-arrow.svg"
+                                            />
+                                        </Link>
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>
