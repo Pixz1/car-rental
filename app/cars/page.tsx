@@ -18,15 +18,15 @@ export default async function Cars({ searchParams }: AllCarsProps) {
     return (
         <div className="overflow-hidden">
             <div className="mt-36 padding-x padding-y max-width">
-                <div className="home__text-container">
+                <div className="cars__text-container">
                     <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
                     <p>Explore the cars you might like</p>
                 </div>
 
-                <div className="home__filters">
+                <div className="cars__filters">
                     <SearchBar />
 
-                    <div className="home__filter-container">
+                    <div className="cars__filter-container">
                         <CustomFilter title="fuel" options={fuels} />
                         <CustomFilter
                             title="year"
@@ -37,7 +37,7 @@ export default async function Cars({ searchParams }: AllCarsProps) {
 
                 {!isDataEmpty ? (
                     <section>
-                        <div className="home__cars-wrapper">
+                        <div className="cars__cars-wrapper">
                             {/* added temp key to suppress warning */}
                             {allCars?.map((car, index) => (
                                 <CarCard key={`temp-car-${index}`} car={car} />
