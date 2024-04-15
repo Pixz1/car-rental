@@ -126,7 +126,7 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                         </div>
                                     </div>
 
-                                    {/* all car details section */}
+                                    {/* simple detail section */}
                                     <div className="flex-1 flex flex-col gap-2">
                                         <h2 className="font-semibold text-xl capitalize">
                                             {car.make} {car.model}
@@ -160,13 +160,16 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
                                         </div>
                                     </div>
 
+                                    {/* links button */}
                                     <div className="flex gap-4">
-                                        <CustomButton
-                                            title="Book"
-                                            containerStyles="w-1/2 py-[16px] rounded-full bg-primary-blue"
-                                            textStyles="text-white text-[14px] leading-[17px] font-bold"
-                                            rightIcon="/add.svg"
-                                        />
+                                        <Link href="/" className="w-full">
+                                            <CustomButton
+                                                title="Book"
+                                                containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
+                                                textStyles="text-white text-[14px] leading-[17px] font-bold"
+                                                rightIcon="/add.svg"
+                                            />
+                                        </Link>
                                         <Link
                                             className="w-full"
                                             href={{

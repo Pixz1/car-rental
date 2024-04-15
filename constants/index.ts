@@ -50,15 +50,15 @@ export const footerLinks = [
     {
         title: "About",
         links: [
-            { title: "* Some Link", url: "/" },
-            { title: "* Some Link", url: "/" },
+            { title: "Link", url: "/" },
+            { title: "Link", url: "/" },
         ],
     },
     {
         title: "Company",
         links: [
-            { title: "* Some Link", url: "/" },
-            { title: "* Some Link", url: "/" },
+            { title: "Link", url: "/" },
+            { title: "Link", url: "/" },
         ],
     },
     {
